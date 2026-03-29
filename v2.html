@@ -125,8 +125,20 @@
     }
 
     .nav-tab .nav-icon {
-      font-size: 22px;
-      line-height: 1;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-tab .nav-icon svg {
+      stroke: var(--gray);
+      transition: stroke 0.2s;
+    }
+
+    .nav-tab.active .nav-icon svg {
+      stroke: var(--orange);
     }
 
     .nav-tab .nav-label {
@@ -253,7 +265,11 @@
     }
 
     #page-home .action-icon {
-      font-size: 28px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     #page-home .action-label {
@@ -293,7 +309,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
       box-shadow: var(--shadow);
     }
 
@@ -377,7 +392,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
       flex-shrink: 0;
     }
 
@@ -413,7 +427,8 @@
 
     #page-today .task-item.done .task-check {
       color: var(--green);
-      font-size: 20px;
+      display: flex;
+      align-items: center;
     }
 
     /* ════════════════════════════════════════
@@ -446,8 +461,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -60%);
-      font-size: 36px;
       animation: bounce 1.2s ease-in-out infinite;
+      display: flex;
     }
 
     @keyframes bounce {
@@ -664,7 +679,7 @@
     }
 
     #page-done .done-emoji {
-      font-size: 80px;
+      display: flex;
       animation: pop 0.5s cubic-bezier(0.175,0.885,0.32,1.275) forwards;
     }
 
@@ -715,8 +730,9 @@
     }
 
     #page-done .done-confetti {
-      font-size: 28px;
-      letter-spacing: 8px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
       margin-bottom: 32px;
     }
 
@@ -774,22 +790,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
       position: relative;
     }
 
     #page-rank .podium-avatar.first {
       width: 52px;
       height: 52px;
-      font-size: 24px;
+      font-size: 22px;
       background: linear-gradient(135deg, var(--yellow), #FFD700);
       box-shadow: 0 0 20px rgba(255,184,0,0.6);
     }
 
     #page-rank .podium-crown {
       position: absolute;
-      top: -14px;
-      font-size: 16px;
+      top: -16px;
+      display: flex;
     }
 
     #page-rank .podium-name {
@@ -859,7 +877,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
       flex-shrink: 0;
     }
 
@@ -906,8 +926,8 @@
     }
 
     #page-tss .tss-map-label .map-big-icon {
-      font-size: 52px;
-      display: block;
+      display: flex;
+      justify-content: center;
     }
 
     #page-tss .tss-map-label span {
@@ -919,10 +939,10 @@
 
     #page-tss .tss-pin {
       position: absolute;
-      font-size: 28px;
       cursor: pointer;
       transition: transform 0.2s;
       user-select: none;
+      display: flex;
     }
 
     #page-tss .tss-pin:active { transform: scale(1.3); }
@@ -981,7 +1001,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
       flex-shrink: 0;
     }
 
@@ -1038,6 +1060,9 @@
       font-size: 22px;
       font-weight: 700;
       margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     #page-assign .assign-hero-meta {
@@ -1126,7 +1151,7 @@
 
     <!-- Hero card -->
     <div class="hero-card" id="page-home">
-      <p class="hero-greeting">早上好 👋</p>
+      <p class="hero-greeting" style="display:flex;align-items:center;gap:6px;">早上好 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 00-2-2 2 2 0 00-2 2M14 10V4a2 2 0 00-2-2 2 2 0 00-2 2v2M10 10.5V6a2 2 0 00-2-2 2 2 0 00-2 2v8a6 6 0 0012 0V11a2 2 0 00-2-2 2 2 0 00-2 2z"/></svg></p>
       <p class="hero-name">张伟 · Lv.8 优秀 DSP</p>
       <div class="hero-stats">
         <div class="hero-stat">
@@ -1161,22 +1186,22 @@
     <p class="section-title">快捷操作</p>
     <div class="quick-actions">
       <div class="action-btn" onclick="showPage('page-today')">
-        <span class="action-icon">📋</span>
+        <span class="action-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3D5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
         <span class="action-label">今日任务</span>
         <span class="action-sub">4 个待完成</span>
       </div>
       <div class="action-btn" onclick="showPage('page-navigate')">
-        <span class="action-icon">🗺️</span>
+        <span class="action-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
         <span class="action-label">前往门店</span>
         <span class="action-sub">1.2 km</span>
       </div>
       <div class="action-btn" onclick="showPage('page-rank')">
-        <span class="action-icon">🏆</span>
+        <span class="action-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M6.5 4H5a2 2 0 000 4c.5 1.5 1.5 2.8 2.5 3.5"/><path d="M17.5 4H19a2 2 0 010 4c-.5 1.5-1.5 2.8-2.5 3.5"/><path d="M8 4v7.5c0 2.2 1.8 4 4 4s4-1.8 4-4V4H8z"/></svg></span>
         <span class="action-label">排行榜</span>
         <span class="action-sub">本周第 3</span>
       </div>
       <div class="action-btn" onclick="showPage('page-tss')">
-        <span class="action-icon">📡</span>
+        <span class="action-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></span>
         <span class="action-label">派单地图</span>
         <span class="action-sub">TSS 视角</span>
       </div>
@@ -1186,23 +1211,23 @@
     <p class="section-title">成就徽章</p>
     <div class="badge-row">
       <div class="badge-item">
-        <div class="badge-circle earned">🔥</div>
+        <div class="badge-circle earned"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9 6 7 9 7 12a5 5 0 0010 0c0-2-.8-3.5-2-5-1 2-1.5 3-3 4z"/></svg></div>
         <span class="badge-name">连续 7 天</span>
       </div>
       <div class="badge-item">
-        <div class="badge-circle earned">⚡</div>
+        <div class="badge-circle earned"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <span class="badge-name">效率之星</span>
       </div>
       <div class="badge-item">
-        <div class="badge-circle earned">🎯</div>
+        <div class="badge-circle earned"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <span class="badge-name">100% 完成</span>
       </div>
       <div class="badge-item">
-        <div class="badge-circle locked">👑</div>
+        <div class="badge-circle locked"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19l2-10 4 6 4-10 4 10 4-6 2 10H2z"/><line x1="2" y1="19" x2="22" y2="19"/></svg></div>
         <span class="badge-name">区域之王</span>
       </div>
       <div class="badge-item">
-        <div class="badge-circle locked">💎</div>
+        <div class="badge-circle locked"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M8 3l4 6 4-6"/></svg></div>
         <span class="badge-name">钻石 DSP</span>
       </div>
     </div>
@@ -1217,7 +1242,7 @@
   <div id="page-today" class="page">
     <div class="page-header">
       <h1>今日任务</h1>
-      <p>完成任务赚取 XP 升级 🚀</p>
+      <p style="display:flex;align-items:center;gap:5px;">完成任务赚取 XP 升级 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></p>
     </div>
 
     <!-- Summary -->
@@ -1240,37 +1265,37 @@
     <p class="section-title">待完成</p>
 
     <div class="task-item" onclick="showPage('page-navigate')">
-      <div class="task-item-icon orange">🏪</div>
+      <div class="task-item-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M3 9v11a1 1 0 001 1h4v-5h8v5h4a1 1 0 001-1V9"/><path d="M3 9c0 1.66 2 3 4 3s4-1.34 4-3M11 9c0 1.66 2 3 4 3s4-1.34 4-3"/></svg></div>
       <div class="task-item-info">
         <p class="task-item-title">拜访 7-Eleven 中山北路店</p>
-        <p class="task-item-meta">📍 1.2 km · 预计 25 分钟</p>
+        <p class="task-item-meta" style="display:flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 1.2 km · 预计 25 分钟</p>
       </div>
       <span class="task-item-xp">+50 XP</span>
     </div>
 
     <div class="task-item" onclick="showPage('page-checkin')">
-      <div class="task-item-icon blue">📸</div>
+      <div class="task-item-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
       <div class="task-item-info">
         <p class="task-item-title">陈列照片点检</p>
-        <p class="task-item-meta">📋 5 项检查 · 全家福州路店</p>
+        <p class="task-item-meta" style="display:flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg> 5 项检查 · 全家福州路店</p>
       </div>
       <span class="task-item-xp">+30 XP</span>
     </div>
 
     <div class="task-item">
-      <div class="task-item-icon green">📦</div>
+      <div class="task-item-icon green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div>
       <div class="task-item-info">
         <p class="task-item-title">补货确认</p>
-        <p class="task-item-meta">📋 库存低于安全线 · 3 个 SKU</p>
+        <p class="task-item-meta" style="display:flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg> 库存低于安全线 · 3 个 SKU</p>
       </div>
       <span class="task-item-xp">+20 XP</span>
     </div>
 
     <div class="task-item">
-      <div class="task-item-icon orange">📝</div>
+      <div class="task-item-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
       <div class="task-item-info">
         <p class="task-item-title">竞品价格采集</p>
-        <p class="task-item-meta">🏪 罗森 × 全家各 3 家门店</p>
+        <p class="task-item-meta" style="display:flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M3 9v11a1 1 0 001 1h4v-5h8v5h4a1 1 0 001-1V9"/></svg> 罗森 × 全家各 3 家门店</p>
       </div>
       <span class="task-item-xp">+40 XP</span>
     </div>
@@ -1278,21 +1303,21 @@
     <p class="section-title">已完成</p>
 
     <div class="task-item done">
-      <div class="task-item-icon green">✅</div>
+      <div class="task-item-icon green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></div>
       <div class="task-item-info">
         <p class="task-item-title">晨会签到</p>
         <p class="task-item-meta">08:30 完成</p>
       </div>
-      <span class="task-check">✓</span>
+      <span class="task-check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
     </div>
 
     <div class="task-item done">
-      <div class="task-item-icon green">✅</div>
+      <div class="task-item-icon green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></div>
       <div class="task-item-info">
         <p class="task-item-title">路线规划确认</p>
         <p class="task-item-meta">09:00 完成</p>
       </div>
-      <span class="task-check">✓</span>
+      <span class="task-check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
     </div>
 
     <div style="height:16px;"></div>
@@ -1309,14 +1334,14 @@
 
     <!-- Map placeholder -->
     <div class="map-placeholder">
-      <div class="map-pin">📍</div>
+      <div class="map-pin"><svg width="40" height="48" viewBox="0 0 24 30" fill="none"><path d="M12 1C7.58 1 4 4.58 4 9c0 6.5 8 17 8 17s8-10.5 8-17c0-4.42-3.58-8-8-8z" fill="#FF6B35" stroke="#E05525" stroke-width="1"/><circle cx="12" cy="9" r="3.5" fill="#fff"/></svg></div>
       <span style="font-size:13px;color:var(--blue);margin-top:60px;">地图加载中…</span>
     </div>
 
     <!-- Store info -->
     <div class="store-info-card">
       <p class="store-name">7-Eleven 中山北路旗舰店</p>
-      <p class="store-meta">📍 中山北路 288 号 · 距您 1.2 km · 步行约 15 分钟</p>
+      <p class="store-meta" style="display:flex;align-items:center;gap:4px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 中山北路 288 号 · 距您 1.2 km · 步行约 15 分钟</p>
       <div class="store-tags">
         <span class="store-tag">A 级门店</span>
         <span class="store-tag">重点拜访</span>
@@ -1324,7 +1349,7 @@
       </div>
       <div class="nav-action-row">
         <button class="btn-primary" onclick="showPage('page-checkin')">到达，开始点检</button>
-        <button class="btn-secondary">🗺️ 导航</button>
+        <button class="btn-secondary" style="display:flex;align-items:center;gap:6px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3D5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg> 导航</button>
       </div>
     </div>
 
@@ -1434,11 +1459,15 @@
        PAGE: DONE (完成庆祝)
   ══════════════════════════════════════ -->
   <div id="page-done" class="page">
-    <div class="done-emoji">🎉</div>
+    <div class="done-emoji"><svg width="80" height="80" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="#FF6B35"/><line x1="12" y1="1" x2="12" y2="5" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="19" x2="12" y2="23" stroke="#FFB800" stroke-width="2.5" stroke-linecap="round"/><line x1="1" y1="12" x2="5" y2="12" stroke="#3D5CFF" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="12" x2="23" y2="12" stroke="#00C896" stroke-width="2.5" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05" stroke="#FFB800" stroke-width="2.5" stroke-linecap="round"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95" stroke="#3D5CFF" stroke-width="2.5" stroke-linecap="round"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22" stroke="#00C896" stroke-width="2.5" stroke-linecap="round"/></svg></div>
     <p class="done-title">点检完成！</p>
     <p class="done-sub">7-Eleven 中山北路旗舰店<br/>所有任务顺利完成，太棒了！</p>
 
-    <div class="done-confetti">🌟 ✨ 🏅</div>
+    <div class="done-confetti">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#FFB800" stroke="#FFB800" stroke-width="0.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="15" r="6"/><path d="M8.5 4l-2 5H5"/><path d="M15.5 4l2 5H19"/><line x1="8.5" y1="4" x2="15.5" y2="4"/></svg>
+    </div>
 
     <div class="done-rewards">
       <div class="reward-chip">
@@ -1456,7 +1485,7 @@
     </div>
 
     <div class="card" style="width:100%;text-align:left;margin-bottom:24px;">
-      <p class="card-title">🔓 接近解锁</p>
+      <p class="card-title" style="display:flex;align-items:center;gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 019.9-1"/></svg> 接近解锁</p>
       <p class="card-body">再完成 <strong style="color:var(--orange);">3</strong> 次点检即可获得「<strong>效率专家</strong>」徽章！</p>
       <div style="margin-top:12px;height:8px;background:#F0F0F0;border-radius:4px;overflow:hidden;">
         <div style="width:70%;height:100%;background:linear-gradient(90deg,var(--orange),var(--yellow));border-radius:4px;"></div>
@@ -1477,11 +1506,11 @@
 
     <!-- Podium -->
     <div class="podium-wrap">
-      <p class="podium-title">🏆 TOP 3 本周之星</p>
+      <p class="podium-title" style="display:flex;align-items:center;justify-content:center;gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M6.5 4H5a2 2 0 000 4c.5 1.5 1.5 2.8 2.5 3.5"/><path d="M17.5 4H19a2 2 0 010 4c-.5 1.5-1.5 2.8-2.5 3.5"/><path d="M8 4v7.5c0 2.2 1.8 4 4 4s4-1.8 4-4V4H8z"/></svg> TOP 3 本周之星</p>
       <div class="podium">
         <!-- 2nd -->
         <div class="podium-person">
-          <div class="podium-avatar">😎</div>
+          <div class="podium-avatar">李</div>
           <p class="podium-name">李娜</p>
           <p class="podium-score">980 XP</p>
           <div class="podium-block second">
@@ -1491,8 +1520,8 @@
         <!-- 1st -->
         <div class="podium-person">
           <div class="podium-avatar first">
-            <span class="podium-crown">👑</span>
-            🦁
+            <span class="podium-crown"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19l2-10 4 6 4-10 4 10 4-6 2 10H2z"/><line x1="2" y1="19" x2="22" y2="19"/></svg></span>
+            王
           </div>
           <p class="podium-name" style="color:#FFD700;font-weight:700;">王磊</p>
           <p class="podium-score">1240 XP</p>
@@ -1502,7 +1531,7 @@
         </div>
         <!-- 3rd -->
         <div class="podium-person">
-          <div class="podium-avatar">🤩</div>
+          <div class="podium-avatar">张</div>
           <p class="podium-name">张伟</p>
           <p class="podium-score">860 XP</p>
           <div class="podium-block third">
@@ -1516,8 +1545,8 @@
     <p class="section-title">完整排名</p>
 
     <div class="rank-list-item">
-      <span class="rank-num top3">🥇</span>
-      <div class="rank-avatar" style="background:linear-gradient(135deg,var(--yellow),#FFD700);">🦁</div>
+      <span class="rank-num top3"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FFD700" stroke="#E0A800" stroke-width="1"><circle cx="12" cy="14" r="7"/><path d="M8.5 4l-2.5 5H4M15.5 4l2.5 5H20M8.5 4h7"/></svg></span>
+      <div class="rank-avatar" style="background:linear-gradient(135deg,var(--yellow),#FFD700);">王</div>
       <div class="rank-info">
         <p class="rank-name">王磊</p>
         <p class="rank-sub">12 家门店 · 100% 完成率</p>
@@ -1526,8 +1555,8 @@
     </div>
 
     <div class="rank-list-item">
-      <span class="rank-num top3">🥈</span>
-      <div class="rank-avatar" style="background:linear-gradient(135deg,#CCC,#999);">😎</div>
+      <span class="rank-num top3"><svg width="22" height="22" viewBox="0 0 24 24" fill="#CCCCCC" stroke="#999" stroke-width="1"><circle cx="12" cy="14" r="7"/><path d="M8.5 4l-2.5 5H4M15.5 4l2.5 5H20M8.5 4h7"/></svg></span>
+      <div class="rank-avatar" style="background:linear-gradient(135deg,#CCC,#999);">李</div>
       <div class="rank-info">
         <p class="rank-name">李娜</p>
         <p class="rank-sub">11 家门店 · 96% 完成率</p>
@@ -1536,8 +1565,8 @@
     </div>
 
     <div class="rank-list-item me">
-      <span class="rank-num top3">🥉</span>
-      <div class="rank-avatar" style="background:linear-gradient(135deg,#CD7F32,#E8A060);">🤩</div>
+      <span class="rank-num top3"><svg width="22" height="22" viewBox="0 0 24 24" fill="#CD7F32" stroke="#A0622A" stroke-width="1"><circle cx="12" cy="14" r="7"/><path d="M8.5 4l-2.5 5H4M15.5 4l2.5 5H20M8.5 4h7"/></svg></span>
+      <div class="rank-avatar" style="background:linear-gradient(135deg,#CD7F32,#E8A060);">张</div>
       <div class="rank-info">
         <p class="rank-name">张伟 <span style="font-size:11px;background:var(--orange);color:#fff;padding:2px 6px;border-radius:8px;margin-left:4px;">我</span></p>
         <p class="rank-sub">8 家门店 · 91% 完成率</p>
@@ -1547,7 +1576,7 @@
 
     <div class="rank-list-item">
       <span class="rank-num">4</span>
-      <div class="rank-avatar">😄</div>
+      <div class="rank-avatar">陈</div>
       <div class="rank-info">
         <p class="rank-name">陈晓</p>
         <p class="rank-sub">9 家门店 · 88% 完成率</p>
@@ -1557,7 +1586,7 @@
 
     <div class="rank-list-item">
       <span class="rank-num">5</span>
-      <div class="rank-avatar">🙂</div>
+      <div class="rank-avatar" style="background:linear-gradient(135deg,var(--green),#00E6AD);">刘</div>
       <div class="rank-info">
         <p class="rank-name">刘阳</p>
         <p class="rank-sub">7 家门店 · 85% 完成率</p>
@@ -1567,7 +1596,7 @@
 
     <div class="rank-list-item">
       <span class="rank-num">6</span>
-      <div class="rank-avatar">😊</div>
+      <div class="rank-avatar" style="background:linear-gradient(135deg,var(--orange),#FF8C5A);">赵</div>
       <div class="rank-info">
         <p class="rank-name">赵芳</p>
         <p class="rank-sub">8 家门店 · 80% 完成率</p>
@@ -1590,17 +1619,17 @@
     <!-- Map -->
     <div class="tss-map">
       <div class="tss-map-label">
-        <span class="map-big-icon">🗺️</span>
+        <span class="map-big-icon"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
         <span>区域实时地图</span>
       </div>
       <!-- Simulated DSP pins -->
-      <div class="tss-pin available" style="top:30%;left:25%;" title="张伟 — 空闲" onclick="showPage('page-assign')">🧑‍💼</div>
-      <div class="tss-pin available" style="top:55%;left:60%;" title="李娜 — 空闲" onclick="showPage('page-assign')">👩‍💼</div>
-      <div class="tss-pin busy"      style="top:20%;left:65%;" title="王磊 — 忙碌">🧑‍💼</div>
-      <div class="tss-pin busy"      style="top:70%;left:30%;" title="陈晓 — 忙碌">👩‍💼</div>
-      <div class="tss-pin available" style="top:45%;left:80%;" title="刘阳 — 空闲" onclick="showPage('page-assign')">🧑‍💼</div>
+      <div class="tss-pin available" style="top:30%;left:25%;" title="张伟 — 空闲" onclick="showPage('page-assign')"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg></div>
+      <div class="tss-pin available" style="top:55%;left:60%;" title="李娜 — 空闲" onclick="showPage('page-assign')"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3D5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg></div>
+      <div class="tss-pin busy"      style="top:20%;left:65%;" title="王磊 — 忙碌"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg></div>
+      <div class="tss-pin busy"      style="top:70%;left:30%;" title="陈晓 — 忙碌"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg></div>
+      <div class="tss-pin available" style="top:45%;left:80%;" title="刘阳 — 空闲" onclick="showPage('page-assign')"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg></div>
       <!-- Store pin -->
-      <div style="position:absolute;top:42%;left:45%;font-size:24px;" title="待拜访门店">🏪</div>
+      <div style="position:absolute;top:42%;left:45%;display:flex;" title="待拜访门店"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M3 9v11a1 1 0 001 1h4v-5h8v5h4a1 1 0 001-1V9"/><path d="M3 9c0 1.66 2 3 4 3s4-1.34 4-3M11 9c0 1.66 2 3 4 3s4-1.34 4-3"/></svg></div>
     </div>
 
     <!-- Stats row -->
@@ -1623,37 +1652,37 @@
     <p class="section-title">DSP 列表</p>
 
     <div class="dsp-list-item" onclick="showPage('page-assign')">
-      <div class="dsp-avatar">🧑‍💼</div>
+      <div class="dsp-avatar">张</div>
       <div class="dsp-info">
         <p class="dsp-name">张伟</p>
-        <p class="dsp-meta">📍 距目标 1.2 km · 上次拜访 3天前</p>
+        <p class="dsp-meta" style="display:flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 距目标 1.2 km · 上次拜访 3天前</p>
       </div>
       <span class="dsp-status available">空闲</span>
     </div>
 
     <div class="dsp-list-item" onclick="showPage('page-assign')">
-      <div class="dsp-avatar" style="background:linear-gradient(135deg,var(--blue),#7B8FFF);">👩‍💼</div>
+      <div class="dsp-avatar" style="background:linear-gradient(135deg,var(--blue),#7B8FFF);">李</div>
       <div class="dsp-info">
         <p class="dsp-name">李娜</p>
-        <p class="dsp-meta">📍 距目标 2.0 km · 上次拜访 1天前</p>
+        <p class="dsp-meta" style="display:flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 距目标 2.0 km · 上次拜访 1天前</p>
       </div>
       <span class="dsp-status available">空闲</span>
     </div>
 
     <div class="dsp-list-item">
-      <div class="dsp-avatar" style="background:linear-gradient(135deg,var(--yellow),#FFD700);">🧑‍💼</div>
+      <div class="dsp-avatar" style="background:linear-gradient(135deg,var(--yellow),#FFD700);">王</div>
       <div class="dsp-info">
         <p class="dsp-name">王磊</p>
-        <p class="dsp-meta">📍 距目标 3.5 km · 正在拜访中</p>
+        <p class="dsp-meta" style="display:flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 距目标 3.5 km · 正在拜访中</p>
       </div>
       <span class="dsp-status busy">忙碌</span>
     </div>
 
     <div class="dsp-list-item" onclick="showPage('page-assign')">
-      <div class="dsp-avatar" style="background:linear-gradient(135deg,var(--orange),#FF8C5A);">🧑‍💼</div>
+      <div class="dsp-avatar" style="background:linear-gradient(135deg,var(--orange),#FF8C5A);">刘</div>
       <div class="dsp-info">
         <p class="dsp-name">刘阳</p>
-        <p class="dsp-meta">📍 距目标 1.8 km · 上次拜访 5天前</p>
+        <p class="dsp-meta" style="display:flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 距目标 1.8 km · 上次拜访 5天前</p>
       </div>
       <span class="dsp-status available">空闲</span>
     </div>
@@ -1673,7 +1702,7 @@
     <!-- Assign hero -->
     <div class="assign-hero">
       <p class="assign-hero-label">分配给</p>
-      <p class="assign-hero-dsp">🧑‍💼 张伟</p>
+      <p class="assign-hero-dsp"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg> 张伟</p>
       <p class="assign-hero-meta">Lv.8 · 空闲 · 距目标 1.2 km</p>
     </div>
 
@@ -1690,7 +1719,7 @@
       </div>
       <div class="assign-detail-row">
         <span class="assign-detail-label">优先级</span>
-        <span class="assign-detail-val" style="color:var(--orange);">🔴 高</span>
+        <span class="assign-detail-val" style="color:var(--orange);display:flex;align-items:center;gap:5px;"><svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#FF6B35"/></svg> 高</span>
       </div>
       <div class="assign-detail-row">
         <span class="assign-detail-label">预计耗时</span>
@@ -1708,22 +1737,22 @@
 
     <!-- DSP match card -->
     <div class="card">
-      <p class="card-title">📊 匹配原因</p>
+      <p class="card-title" style="display:flex;align-items:center;gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg> 匹配原因</p>
       <div style="display:flex;flex-direction:column;gap:8px;">
         <div style="display:flex;align-items:center;gap:8px;font-size:14px;">
-          <span style="color:var(--green);">✓</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           <span>距目标最近 (1.2 km)</span>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:14px;">
-          <span style="color:var(--green);">✓</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           <span>熟悉该门店 (历史拜访 12 次)</span>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:14px;">
-          <span style="color:var(--green);">✓</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           <span>当前无其他任务</span>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:14px;">
-          <span style="color:var(--yellow);">⚠</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           <span>今日任务量略高 (8/12)</span>
         </div>
       </div>
@@ -1742,17 +1771,17 @@
   ══════════════════════════════════════ -->
   <nav id="bottom-nav">
     <div class="nav-tab active" id="tab-home" onclick="showPage('page-home'); setActiveTab('tab-home')">
-      <span class="nav-icon">🏠</span>
+      <span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V10.5z"/><path d="M9 21V13h6v8"/></svg></span>
       <span class="nav-label">首页</span>
       <div class="nav-dot"></div>
     </div>
     <div class="nav-tab" id="tab-today" onclick="showPage('page-today'); setActiveTab('tab-today')">
-      <span class="nav-icon">📋</span>
+      <span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
       <span class="nav-label">任务</span>
       <div class="nav-dot"></div>
     </div>
     <div class="nav-tab" id="tab-rank" onclick="showPage('page-rank'); setActiveTab('tab-rank')">
-      <span class="nav-icon">🏆</span>
+      <span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M6.5 4H5a2 2 0 000 4c.5 1.5 1.5 2.8 2.5 3.5"/><path d="M17.5 4H19a2 2 0 010 4c-.5 1.5-1.5 2.8-2.5 3.5"/><path d="M8 4v7.5c0 2.2 1.8 4 4 4s4-1.8 4-4V4H8z"/></svg></span>
       <span class="nav-label">排行</span>
       <div class="nav-dot"></div>
     </div>
